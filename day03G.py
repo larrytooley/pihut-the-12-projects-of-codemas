@@ -1,20 +1,32 @@
-# Imports
 from machine import Pin
 import time
 
-# Set up our button names and GPIO pin numbers
-# Also set pins as inputs and use pull downs
-button1 = Pin(13, Pin.IN, Pin.PULL_DOWN)
+# Set up the LED pins
+seg1 = Pin(13, Pin.OUT)
+seg2 = Pin(12, Pin.OUT)
+seg3 = Pin(11, Pin.OUT)
+seg4 = Pin(10, Pin.OUT)
+seg5 = Pin(9, Pin.OUT)
 
-# Set up our LED names and GPIO pin numbers
-red = Pin(18, Pin.OUT)
+# Turn on each LED at a time
+seg1.value(1)
+time.sleep(1)
 
-while True: # Loop forever
+seg2.value(1)
+time.sleep(1)
 
-    time.sleep(0.5) # Short delay
-            
-    if button1.value() == 1: #If button 1 is pressed
-        
-        print("Button 1 pressed")
-        
-        red.toggle() # Toggle Red LED on/off
+seg3.value(1)
+time.sleep(1)
+
+seg4.value(1)
+time.sleep(1)
+
+seg5.value(1)
+time.sleep(1)
+
+# Turn all LEDs off
+seg1.value(0)
+seg2.value(0)
+seg3.value(0)
+seg4.value(0)
+seg5.value(0)
